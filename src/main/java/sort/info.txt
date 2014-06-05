@@ -1,0 +1,58 @@
+Iterative sorts:
+    Bubble
+        /**
+         * Bubble sort, is a simple sorting algorithm that works by
+         * repeatedly stepping through the list to be sorted,
+         * comparing each pair of adjacent items and
+         * swapping them if they are in the wrong order.
+         *
+         * Take first element and compare it with next
+         * till you find the smaller one and swap them
+         * The elements are sorted from beginning.
+         * O(n2)
+         */
+
+    Insertion
+        /**
+         * Start from second element
+         * Compare current element with previous elements as long as current is smaller
+         * Move the elements to right so that current element can be inserted in right place
+         * [2,6,3,4,8]	//current is 6. 2 is smaller. No change
+         * [2,6,3,4,8]	//current is 3. Move 6 to right. 2 is smaller, so place 3 after 2
+         * [2,3,6,4,8]	//current is 4. Move 6 to right. 3 is smaller, so place 4 after 3
+         * [2,3,4,6,8]	//current is 6. 4 is smaller. No change
+         * [2,3,4,6,8]	//current is 8. 6 is smaller. No change
+         */
+
+    Selection
+        /**
+         * Find smallest element and swap it with the first element of unsorted part.
+         * Gets sorted from left.
+         * O(n^2)
+         */
+
+Special sort:
+    Counting
+        /**
+         * How to sort a huge list of single digit integers which fit in memory.
+         * O(n) - precisely O(kn)
+         * {1,1,4,0,4,6,6,3}
+         * Count number of repetitions of integers. {1, 2, 0, 1, 2, 0, 2, 0, 0}
+         * Loop through count array and replace original array contents based on repetition
+         */
+
+
+Recursive sort:
+    Merge sort
+        /**
+         * Divide the array into smaller sub arrays of equal size and sort recursively. Merge the sorted arrays.
+         * O(nlogn)
+         */
+
+    Quick sort
+        /**
+         * Pick an element as pivot. Partition such that all the elements to it's right larger and
+         * all elements to it's left are smaller. There is no merge subroutine.
+         * O(nlog) for best case
+         * O(n^2) for worst case - already sorted array
+         */
