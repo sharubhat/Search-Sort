@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AlgoStanford.iml" filepath="$PROJECT_DIR$/AlgoStanford.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Search-Sort.iml" filepath="$PROJECT_DIR$/Search-Sort.iml" />
     </modules>
   </component>
 </project>

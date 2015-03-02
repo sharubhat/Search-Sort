@@ -49,7 +49,7 @@ public class MergeSort {
         }
 
         // Copy the rest of the left side of the array into the target array
-        // Node that since helper is copy of numbers and
+        // Note that since helper is copy of numbers and
         // right side is already sorted, we need not copy them again
         while(li <= mid) {
             numbers[di++] = helper[li++];

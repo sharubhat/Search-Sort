@@ -23,9 +23,9 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="AlgoStanford" />
+        <module name="Search-Sort" />
         <module name="untitled" />
       </profile>
     </annotationProcessing>
   </component>
 </project>
-

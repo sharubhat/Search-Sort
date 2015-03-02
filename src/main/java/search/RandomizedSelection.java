@@ -1,6 +1,8 @@
 package search;
 
 /**
+ * Find the k-th smallest element in an array without sorting.
+ *
  * Created by sharath on 5/29/14.
  */
 

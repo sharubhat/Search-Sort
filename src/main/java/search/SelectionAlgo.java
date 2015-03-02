@@ -6,21 +6,21 @@ package search;
 //Find nth largest element in array in O(n) time.
 //Algorithm is called selection algorithm. It requires O(kn) time
 public class SelectionAlgo {
-    public int search(int nth, int[] input) throws IllegalArgumentException {
+    public int search(int nth, int[] input) {
         if(input.length == 0 || nth > input.length || nth < 0)
             throw new IllegalArgumentException("Empty array");
-        int maxindex;
-        int maxvalue;
+        int maxIndex;
+        int maxValue;
         for(int i = 0; i < input.length; i++) {
-            maxindex = i;
-            maxvalue = input[i];
+            maxIndex = i;
+            maxValue = input[i];
             for(int j = i + 1; j < input.length; j++) {
-                if(maxvalue <= input[j]) {
-                    maxvalue = input[j];
-                    maxindex = j;
+                if(maxValue <= input[j]) {
+                    maxValue = input[j];
+                    maxIndex = j;
                 }
             }
-            swap(input, i, maxindex);
+            swap(input, i, maxIndex);
         }
         return input[nth];
     }
