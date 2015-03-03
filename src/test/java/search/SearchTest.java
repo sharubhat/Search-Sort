@@ -83,4 +83,29 @@ public class SearchTest {
         if(position != -1)
             assertEquals((int)inputs[position], key);
     }
+
+    @Test
+    public void testRandomizedSelectionWorksForNoInputs() {
+        thrown.expect(IllegalArgumentException.class);
+
+        Random generator = new Random();
+        int nth = generator.nextInt(MAX);
+        RandomizedSelection<Integer> rSelection = new RandomizedSelection<>();
+        rSelection.search(nth, new Integer[0]);
+    }
+
+    @Test
+    public void testRandomizedSelection() {
+        long startTime = System.currentTimeMillis();
+        Random generator = new Random();
+        int nth = generator.nextInt(MAX);
+        Arrays.sort(inputs);
+        RandomizedSelection<Integer> rSelection = new RandomizedSelection<>();
+        int value = rSelection.search(nth, inputs);
+        long stopTime = System.currentTimeMillis();
+        System.out.println("SelectionAlgo took " + (stopTime - startTime));
+
+        Arrays.sort(inputs);
+        assertEquals((int)inputs[nth - 1], value);
+    }
 }
