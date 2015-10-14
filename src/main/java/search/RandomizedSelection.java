@@ -18,30 +18,34 @@ public class RandomizedSelection<V extends Comparable<V>> {
 
     public V search(int nth, V[] inputs) {
         System.out.println("nth is " + nth);
-        if(inputs == null || inputs.length <= nth)
+        if(inputs == null || inputs.length < nth)
             throw new IllegalArgumentException();
 
         int k = nth - 1;
 
         int from = 0, to = inputs.length - 1;
 
+        // if from == to, we have reached nth element
         while(from < to) {
             int r = from, w = to;
             V mid = inputs[(r + w)/2];
 
+            // stop if the reader and writer meet
             while(r < w) {
-                if(inputs[r].compareTo(mid) >= 0) {
+                if(inputs[r].compareTo(mid) >= 0) { // put the large values at the end
                     swap(inputs, r, w);
                     w--;
-                } else {
+                } else {                            // the value is smaller than the pivot, skip
                     r++;
                 }
             }
 
+            // if we stepped up(r++) we need to step one down
             if(inputs[r].compareTo(mid) > 0) {
                 r--;
             }
 
+            // the r pointer is on the end of the first n elements
             if(k <= r) {
                 to = r;
             } else {

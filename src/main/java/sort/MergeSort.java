@@ -12,17 +12,17 @@ public class MergeSort {
     public void sort(int[] values) {
         this.numbers = values;
         this.helper = new int[numbers.length];
-        mergesort(0, numbers.length - 1);
+        mergeSort(0, numbers.length - 1);
 
     }
 
-    private void mergesort(int low, int high) {
+    private void mergeSort(int low, int high) {
         // Check if low is smaller then high, if not then the array is sorted
         if(low < high) {
             int mid = low + (high - low)/2;
 
-            mergesort(low, mid);
-            mergesort(mid + 1, high);
+            mergeSort(low, mid);
+            mergeSort(mid + 1, high);
             merge(low, mid, high);
         }
     }

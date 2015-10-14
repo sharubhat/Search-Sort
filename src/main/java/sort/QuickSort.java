@@ -1,5 +1,7 @@
 package sort;
 
+import java.util.Arrays;
+
 /**
  * Created by sharath on 5/12/14.
  */
@@ -64,25 +66,9 @@ public class QuickSort {
                 int a = inputs[start];
                 int b = inputs[mid];
                 int c = inputs[end];
-                if (
-                        (
-                                (a <= b && b <= c) || (a >= b && b >= c)
-                        )
-                                ||
-                                (
-                                        (c <= b && b <= a) || (c >= b && b >= a)
-                                )
-                        ) {
+                if((a <= b && b <= c) || (a >= b && b >= c)) {
                     swap(start, mid);
-                } else if (
-                        (
-                                (a <= c && c <= b) || (a >= c && c >= b)
-                        )
-                                ||
-                                (
-                                        (b <= c && c <= a) || (b >= c && c >= a)
-                                )
-                        ) {
+                } else if((a <= c && c <= b) || (a >= c && c >= b)) {
                     swap(start, end);
                 }
                 break;
@@ -117,5 +103,24 @@ public class QuickSort {
         int tmp = inputs[i];
         inputs[i] = inputs[j];
         inputs[j] = tmp;
+    }
+
+    public static void main(String[] args) {
+        int[] a1 = {};
+        int[] a2 = {-5,-4,-3,-2,-1,0,1,2,3,4,5,6};
+        int[] a3 = {6,3,9,2,7,4,6,3};
+
+//        QuickSort qs = new QuickSort(a1, "median");
+//        System.out.println(Arrays.toString(a1));
+//        qs.sort();
+//        System.out.println(Arrays.toString(a1));
+        QuickSort qs = new QuickSort(a2, "median");
+        System.out.println(Arrays.toString(a2));
+        qs.sort();
+        System.out.println(Arrays.toString(a2));
+        qs = new QuickSort(a3, "median");
+        System.out.println(Arrays.toString(a3));
+        qs.sort();
+        System.out.println(Arrays.toString(a3));
     }
 }
