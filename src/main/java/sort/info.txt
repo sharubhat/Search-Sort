@@ -60,3 +60,16 @@ Recursive sort:
          * O(nlog) for best case
          * O(n^2) for worst case - already sorted array
          */
+
+In-place sort:
+    Sorting algorithm is in-place if it requires very little additional space besides the array holding initial elements.
+    These are useful when the data set is very large.
+    E.g: Quick sort, Heap sort, Bubble sort.
+
+    Note : Merge sort is not in-place sort as it requires O(n) additional space.
+
+Stable sort:
+    Sorting where order of elements with equal keys are maintained.
+    E.g: Merge sort, Bubble sort, Insertion sort
+
+    Note: Heap sort and Quick sort are not stable.

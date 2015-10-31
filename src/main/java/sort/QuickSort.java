@@ -62,15 +62,21 @@ public class QuickSort {
                 swap(start, end);
                 break;
             case "median": {
+                // This method is called median of 3. This is not a true median of entire sub array.
+                // Sort first, middle and last numbers and take the middle from the sorted list.
                 int mid = start + (end - start) / 2;
                 int a = inputs[start];
                 int b = inputs[mid];
                 int c = inputs[end];
+                // if a,b,c are sorted, b becomes the median and it should be swapped with a.
                 if((a <= b && b <= c) || (a >= b && b >= c)) {
+                    // if sorted array looks like [a,b,c] or [c,b,a]
                     swap(start, mid);
                 } else if((a <= c && c <= b) || (a >= c && c >= b)) {
+                    // if sorted array looks like [a,c,b] or [b,c,a]
                     swap(start, end);
                 }
+                // if sorted array looks like [b,a,c] or [c,a,b] where a is in the center, no swapping needed
                 break;
             }
         }
