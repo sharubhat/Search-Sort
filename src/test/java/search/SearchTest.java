@@ -75,11 +75,12 @@ public class SearchTest {
         long startTime = System.currentTimeMillis();
         Random generator = new Random();
         int key = generator.nextInt(MAX);
+        key = -100;
         Arrays.sort(inputs);
         BinarySearch<Integer> bSearch = new BinarySearch<>();
         int position = bSearch.search(key, inputs);
         long stopTime = System.currentTimeMillis();
-        System.out.println("SelectionAlgo took " + (stopTime - startTime));
+        System.out.println("Binary Search took " + (stopTime - startTime));
         if(position != -1)
             assertEquals((int)inputs[position], key);
     }
