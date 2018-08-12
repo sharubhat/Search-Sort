@@ -13,10 +13,10 @@ public class HeapSort {
             throw new IllegalArgumentException("Empty inputs");
         Queue<Integer> minHeap = new PriorityQueue<>();
         for(int i : input) {
-            minHeap.add(i);
+            minHeap.offer(i);
         }
         for(int i = 0; i < input.length; i++) {
-            input[i] = minHeap.remove();
+            input[i] = minHeap.poll();
         }
         System.out.println(Arrays.toString(input));
     }
